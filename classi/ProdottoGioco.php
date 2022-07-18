@@ -1,69 +1,30 @@
-<?php
+<?php 
 
-require_once './classi/Prodotto.php';
 
-class ProdottoGioco extends Prodotto
+require_once __DIR__ . "/Prodotto.php";
+
+class ProdottoGioco extends Prodotto{
+
+    protected $color ; 
+    protected $material ;
+    protected $category = "Games";
+    
+    
+
+
+function __construct($_name , $_price , $_description , $_color , $_material)
 {
-    protected $age;
-    protected $material;
-    protected $color;
-    protected $size;
-    protected $weight;
-
-    public function __construct($name, $price, $description, $image, $category, $brand, $age, $material, $color, $size, $weight)
-    {
-        parent::__construct($name, $price, $description, $image, $category, $brand);
-        $this->setAge($age);
-        $this->setMaterial($material);
-        $this->setColor($color);
-        $this->setSize($size);
-        $this->setWeight($weight);
-    }
+    parent::__construct($_name , $_price , $_description);
+    $this->setColor($_color);
+    $this->setMaterial($_material);
+}
 
 
-    /**
-     * Get the value of age
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
 
-    /**
-     * Set the value of age
-     *
-     * @return  self
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of material
-     */
-    public function getMaterial()
-    {
-        return $this->material;
-    }
-
-    /**
-     * Set the value of material
-     *
-     * @return  self
-     */
-    public function setMaterial($material)
-    {
-        $this->material = $material;
-
-        return $this;
-    }
 
     /**
      * Get the value of color
-     */
+     */ 
     public function getColor()
     {
         return $this->color;
@@ -73,7 +34,7 @@ class ProdottoGioco extends Prodotto
      * Set the value of color
      *
      * @return  self
-     */
+     */ 
     public function setColor($color)
     {
         $this->color = $color;
@@ -82,42 +43,25 @@ class ProdottoGioco extends Prodotto
     }
 
     /**
-     * Get the value of size
-     */
-    public function getSize()
+     * Get the value of material
+     */ 
+    public function getMaterial()
     {
-        return $this->size;
+        return $this->material;
     }
 
     /**
-     * Set the value of size
+     * Set the value of material
      *
      * @return  self
-     */
-    public function setSize($size)
+     */ 
+    public function setMaterial($material)
     {
-        $this->size = $size;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of weight
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * Set the value of weight
-     *
-     * @return  self
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
+        $this->material = $material;
 
         return $this;
     }
 }
+
+
+?>
